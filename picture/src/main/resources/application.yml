@@ -1,0 +1,12 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /feng
+
+spring:
+  redis:
+    host: 43.142.157.247
+    port: 6379
+    database: 0
+    password: Wsldf123456
+
