@@ -1,45 +1,35 @@
 package com.yyds.feng.common.util;
 
+import com.yyds.feng.common.enums.ResultCode;
 import java.util.HashMap;
-import java.util.Map;
 
 public class R extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
 
     public R() {
-        put("status", 1);
-        put("message", "success");
     }
 
-    public static R error() {
-        return error(2, "未知异常，请联系管理员");
-    }
-
-    public static R error(String msg) {
-        return error(0, msg);
-    }
-
-    public static R error(int code, String msg) {
-        R r = new R();
-        r.put("status", code);
-        r.put("message", msg);
-        return r;
-    }
-
-    public static R ok(String msg) {
-        R r = new R();
-        r.put("message", msg);
-        return r;
-    }
-
-    public static R ok(Map<String, Object> map) {
-        R r = new R();
-        r.putAll(map);
-        return r;
+    public R(int code, String msg) {
+        put("code", code);
+        put("msg", msg);
     }
 
     public static R ok() {
-        return new R();
+        return new R(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMsg());
+    }
+
+    public static R ok(Object o) {
+        R r = new R(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMsg());
+        r.put("data",o);
+        return r;
+    }
+
+    public static R error() {
+        return new R(ResultCode.FAILED.getCode(), ResultCode.FAILED.getMsg());
+    }
+
+    public static R error(String msg) {
+        return new R(ResultCode.FAILED.getCode(), msg);
     }
 
     public R put(String key, Object value) {

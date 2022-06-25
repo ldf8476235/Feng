@@ -1,4 +1,4 @@
-package com.yyds.feng.picture.config;
+package com.yyds.feng.common.config;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler;

@@ -10,3 +10,6 @@ spring:
     database: 0
     password: Wsldf123456
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
