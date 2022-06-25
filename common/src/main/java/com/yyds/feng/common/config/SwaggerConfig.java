@@ -39,8 +39,8 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("项目限制")
-            .description("项目限制接口文档")
+            .title("峰")
+            .description("峰yyds")
             .version("1.0")
             .build();
     }

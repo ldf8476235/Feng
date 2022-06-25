@@ -1,6 +1,5 @@
 package com.yyds.feng.common.enums;
 
-import com.yyds.feng.common.interfaces.StatusCode;
 import lombok.Getter;
 
 /**
@@ -9,7 +8,7 @@ import lombok.Getter;
  * @Date 2022/6/23 13:59
  */
 @Getter
-public enum ResultCode implements StatusCode {
+public enum ResultCode{
 
     SUCCESS(200, "success"),
     FAILED(400, "error"),

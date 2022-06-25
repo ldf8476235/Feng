@@ -1,7 +1,7 @@
 server:
-  port: 8090
-  servlet:
-    context-path: /feng
+  port: 8080
+#  servlet:
+#    context-path: /feng
 
 spring:
   redis:
