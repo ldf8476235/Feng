@@ -9,6 +9,8 @@ import okhttp3.*;
  */
 public class WxPush {
 
+    public static String DEFAULT_KEY = "SCT151414Tymfco2sYLA04boc2Jl7yBxC6";
+
     private static OkHttpClient client = new OkHttpClient();
 
     private static String url = "https://sctapi.ftqq.com/";
