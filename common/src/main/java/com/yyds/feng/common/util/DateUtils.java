@@ -80,4 +80,9 @@ public class DateUtils {
         }
         return null;
     }
+
+    public static Integer getHour(){
+        String hour = getDate("HH");
+        return Integer.getInteger(hour);
+    }
 }

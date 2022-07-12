@@ -4,6 +4,11 @@ server:
 #    context-path: /feng
 
 spring:
+  redis:
+    host: 43.142.157.247
+    port: 6379
+    database: 0
+    password: Wsldf123456
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

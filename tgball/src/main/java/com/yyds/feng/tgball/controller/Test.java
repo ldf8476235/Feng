@@ -1,6 +1,7 @@
 package com.yyds.feng.tgball.controller;
 
 import com.yyds.feng.common.util.DateUtils;
+import com.yyds.feng.common.util.RedisUtils;
 import com.yyds.feng.common.util.SSLSocketClientUtil;
 import com.yyds.feng.common.util.WxPush;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,9 +25,12 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class Test {
 
+    @Autowired
+    RedisUtils redisUtils;
+
     public static void main(String[] args) throws UnsupportedEncodingException {
 //        sendSms();
-        //login();
+        login();
         my();
     }
     public static void sendSms(){
@@ -70,7 +75,9 @@ public class Test {
             res = Jsoup.connect("https://m1.zvip111.co/my.php")
                     .method(Connection.Method.GET)
                     .timeout(10000)
-                    .header("Cookie","popupshow=saw; PHPSESSID=3bl5e7gj5dga8dlbcs99j5oft6; say=tg332wyaya120.245.114.126; loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D")
+                    .header("Cookie","popupshow=saw; PHPSESSID=n4ocdm9l19f435q12bf6vk8uh8; say=tg332wyaya223.104.41.120; loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D")
+                    .header("User-Agent","Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
+                    .header("deviceInfo", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
                     .validateTLSCertificates(false)
                     .execute();
             Document doc = res.parse();
@@ -109,7 +116,7 @@ public class Test {
                 .addHeader("Connection", "keep-alive")
                 .addHeader("Referer", "https://m1.zvip111.co/login.php")
                 .addHeader("deviceInfo", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
-                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya120.245.114.126; PHPSESSID=3bl5e7gj5dga8dlbcs99j5oft6")
+                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya120.245.114.126; PHPSESSID=n4ocdm9l19f435q12bf6vk8uh8")
                 .post(requestBody)
                 .build();
         Call call = okHttpClient.newCall(request);

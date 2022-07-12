@@ -2,6 +2,7 @@ package com.yyds.feng.tgball.component;
 
 
 import com.yyds.feng.tgball.controller.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -13,13 +14,17 @@ import java.io.UnsupportedEncodingException;
 public class SaticScheduleTask {
 //    @Scheduled(cron = "0/5 * * * * ?")
     //或直接指定时间间隔，例如：5秒 5000
-    @Scheduled(fixedRate=10000)
-    private static void configureTasks() {
+    @Autowired
+    TgBall tgBall;
+
+    @Scheduled(fixedRate=30000)
+    private void configureTasks() {
 //        try {
 //            Test.login();
 //        } catch (UnsupportedEncodingException e) {
 //            throw new RuntimeException(e);
 //        }
-        Test.my();
+//        Test.my();
+        tgBall.my();
     }
 }
