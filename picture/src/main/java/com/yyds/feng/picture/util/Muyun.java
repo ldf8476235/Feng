@@ -18,12 +18,12 @@ import java.util.List;
  */
 public class Muyun {
 
-    private static String cerBaseUrl = "http://longtengmuyun.bjyjyc.com/";
+    private static String cerBaseUrl = "http://wx.bjzlke.com/";
     private static MediaType mediaType = MediaType.parse("application/json");
 
-    private static String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjE1MTk0LCJleHAiOjE2NTQ2ODIxOTk1OTR9.dl3T5RqyBMLfQyDtLp2sTTWVf-FRZyc0Ubn6KJVsSDg";
-    private static String tid = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjE1MTk0LCJleHAiOjE2NTQ2ODIxOTk1OTR9.dl3T5RqyBMLfQyDtLp2sTTWVf-FRZyc0Ubn6KJVsSDg";
-    private static String cookie = "tid=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjE1MTk0LCJleHAiOjE2NTQ2ODIxOTk1OTR9.dl3T5RqyBMLfQyDtLp2sTTWVf-FRZyc0Ubn6KJVsSDg; userinfo={%22uid%22:15194%2C%22phone%22:%2217801442962%22%2C%22nickname%22:%22%E6%9D%B0%22%2C%22avatar%22:%22%22%2C%22gender%22:0%2C%22email%22:%22%22%2C%22token%22:%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjE1MTk0LCJleHAiOjE2NTQ2ODIxOTk1OTR9.dl3T5RqyBMLfQyDtLp2sTTWVf-FRZyc0Ubn6KJVsSDg%22%2C%22payee_name%22:%22%E6%9D%8E%E9%82%93%E6%9D%B0%22%2C%22payee_bankno%22:%226228480018739873176%22%2C%22payee_bankname%22:%22%E5%86%9C%E4%B8%9A%E9%93%B6%E8%A1%8C%22%2C%22recommender_path%22:%22[]%22%2C%22level1_recommender%22:0%2C%22level2_recommender%22:0%2C%22qrcode%22:%22https://longtengmuyun-eshop.oss-cn-beijing.aliyuncs.com/qr-code/15194_qr_1653372200748.jpg%22%2C%22sign%22:%22https://longtengmuyun-eshop.oss-cn-beijing.aliyuncs.com/user-sign/15194.png%22%2C%22roles%22:[]%2C%22state%22:1%2C%22create_time%22:%222022-05-24%2014:03:20%22%2C%22last_login_time%22:%222022-05-27%2023:26:49%22%2C%22update_time%22:%222022-05-27%2023:26:49%22%2C%22edit_bank_access%22:0%2C%22edit_nickname_access%22:1%2C%22edit_avatar_access%22:1%2C%22has_read_protocol%22:1%2C%22admin_token%22:%22%22%2C%22bad%22:0%2C%22first_enter%22:0%2C%22bucket_id%22:0%2C%22open_id%22:%22o34Ix6QZezX4s1BbGt2lmuewwu3k%22%2C%22alipay_img%22:null%2C%22wxpay_img%22:null%2C%22address_list%22:[{%22id%22:4593%2C%22uid%22:15194%2C%22name%22:%22%E6%9D%8E%E9%82%93%E6%9D%B0%22%2C%22phone%22:%2217801442962%22%2C%22province%22:%22%E5%8C%97%E4%BA%AC%E5%B8%82%22%2C%22city%22:%22%E5%8C%97%E4%BA%AC%E5%B8%82%22%2C%22county%22:%22%E6%B5%B7%E6%B7%80%E5%8C%BA%22%2C%22detail%22:%22%E5%8D%8E%E6%B8%85%E8%8B%916%E5%8F%B7%E6%A5%BC5-401%22%2C%22isdefault%22:1%2C%22create_time%22:%222022-05-24%2014:06:49%22}]%2C%22has_sign%22:true}";
+    private static String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjIxNzg5MCwiZXhwIjoxNjU2NzMxMTU5NzA5fQ.YUG-OgaEhLoF1hyjRH4zQ1cjP4bwHoclBIltQyCI95M";
+    private static String tid = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjIxNzg5MCwiZXhwIjoxNjU2NzMxMTU5NzA5fQ.YUG-OgaEhLoF1hyjRH4zQ1cjP4bwHoclBIltQyCI95M";
+    private static String cookie = "tid=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjIxNzg5MCwiZXhwIjoxNjU2NzMxMTU5NzA5fQ.YUG-OgaEhLoF1hyjRH4zQ1cjP4bwHoclBIltQyCI95M; userinfo={%22uid%22:217890%2C%22phone%22:%2217801442962%22%2C%22nickname%22:%22%E5%B0%8F%E6%9D%B0%22%2C%22avatar%22:%22%22%2C%22gender%22:0%2C%22email%22:%22%22%2C%22token%22:%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjIxNzg5MCwiZXhwIjoxNjU2NzMxMTU5NzA5fQ.YUG-OgaEhLoF1hyjRH4zQ1cjP4bwHoclBIltQyCI95M%22%2C%22payee_name%22:%22%22%2C%22payee_bankno%22:%22%22%2C%22payee_bankname%22:%22%22%2C%22recommender_path%22:%22[]%22%2C%22level1_recommender%22:0%2C%22level2_recommender%22:0%2C%22qrcode%22:%22https://xiahuixingchen-eshop.oss-cn-beijing.aliyuncs.com/qr-code/217890_qr_1656644745113.jpg%22%2C%22sign%22:%22https://xiahuixingchen-eshop.oss-cn-beijing.aliyuncs.com/user-sign/217890.png%22%2C%22roles%22:[]%2C%22state%22:1%2C%22create_time%22:%222022-07-01%2011:05:45%22%2C%22last_login_time%22:%222022-07-01%2011:05:59%22%2C%22update_time%22:%222022-07-01%2011:08:58%22%2C%22edit_bank_access%22:1%2C%22edit_nickname_access%22:1%2C%22edit_avatar_access%22:1%2C%22has_read_protocol%22:1%2C%22admin_token%22:%22%22%2C%22bad%22:0%2C%22first_enter%22:0%2C%22bucket_id%22:0%2C%22open_id%22:%22opTHp511ow_Hy3_VThU3VBLkHjwU%22%2C%22alipay_img%22:null%2C%22wxpay_img%22:null%2C%22address_list%22:[]%2C%22has_sign%22:true}";
 
     public static void main(String[] args) {
         com.yyds.feng.picture.entity.Muyun muyun = new com.yyds.feng.picture.entity.Muyun();
@@ -39,20 +39,20 @@ public class Muyun {
         RequestBody requestBody = RequestBody.create(mediaType, params.toString() + "");
         OkHttpClient client = new OkHttpClient();
         String referer = "";
-        if (sid == 3){
-            referer = "https://longtengmuyun.bjyjyc.com/onsalelist?schedule=%7B%22id%22%3A3,%22name%22%3A%22%E7%8B%82%E6%AC%A2%E6%8A%A2%E8%B4%AD%E4%B8%8A%E5%8D%88%E5%9C%BA%22,%22startStr%22%3A%2210%3A30%22,%22starttime%22%3A1654569000069,%22endStr%22%3A%2211%3A35%22,%22endtime%22%3A1654572900069,%22state%22%3A1,%22stateStr%22%3A%22%E6%8A%A2%E8%B4%AD%E4%B8%AD...%22,%22gtime%22%3A0,%22schedule_state%22%3A1,%22tip%22%3A%22%22%7D";
-        } else {
-            referer =  "https://longtengmuyun.bjyjyc.com/onsalelist?schedule=%7B%22id%22%3A3,%22name%22%3A%22%E7%8B%82%E6%AC%A2%E6%8A%A2%E8%B4%AD%E4%B8%8A%E5%8D%88%E5%9C%BA%22,%22startStr%22%3A%2210%3A30%22,%22starttime%22%3A1654569000069,%22endStr%22%3A%2211%3A35%22,%22endtime%22%3A1654572900069,%22state%22%3A1,%22stateStr%22%3A%22%E6%8A%A2%E8%B4%AD%E4%B8%AD...%22,%22gtime%22%3A0,%22schedule_state%22%3A1,%22tip%22%3A%22%22%7D";
-        }
+//        if (sid == 3){
+//            referer = "https://wx.bjzlke.com/onsalelist?schedule=%7B%22id%22%3A3,%22name%22%3A%22%E7%8B%82%E6%AC%A2%E6%8A%A2%E8%B4%AD%E4%B8%8A%E5%8D%88%E5%9C%BA%22,%22startStr%22%3A%2210%3A30%22,%22starttime%22%3A1654569000069,%22endStr%22%3A%2211%3A35%22,%22endtime%22%3A1654572900069,%22state%22%3A1,%22stateStr%22%3A%22%E6%8A%A2%E8%B4%AD%E4%B8%AD...%22,%22gtime%22%3A0,%22schedule_state%22%3A1,%22tip%22%3A%22%22%7D";
+//        } else {
+//            referer =  "https://wx.bjzlke.com/onsalelist?schedule=%7B%22id%22%3A3,%22name%22%3A%22%E7%8B%82%E6%AC%A2%E6%8A%A2%E8%B4%AD%E4%B8%8A%E5%8D%88%E5%9C%BA%22,%22startStr%22%3A%2210%3A30%22,%22starttime%22%3A1654569000069,%22endStr%22%3A%2211%3A35%22,%22endtime%22%3A1654572900069,%22state%22%3A1,%22stateStr%22%3A%22%E6%8A%A2%E8%B4%AD%E4%B8%AD...%22,%22gtime%22%3A0,%22schedule_state%22%3A1,%22tip%22%3A%22%22%7D";
+//        }
         Request request = new Request.Builder()
                 .url(cerBaseUrl + "web/rush/getRushGoods")
                 .post(requestBody)
-                .addHeader("Host", "longtengmuyun.bjyjyc.com")
+                .addHeader("Host", "wx.bjzlke.com")
                 .addHeader("Accept", "application/json, text/plain, */*")
                 .addHeader("Accept-Language", "zh-CN,zh-Hans;q=0.9")
 //                .addHeader("Accept-Encoding", "gzip, deflate, br")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("Origin", "https://longtengmuyun.bjyjyc.com")
+                .addHeader("Origin", "https://wx.bjzlke.com")
                 .addHeader("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.20(0x18001441) NetType/WIFI Language/zh_CN")
                 .addHeader("Connection", "keep-alive")
                 .addHeader("Referer", referer)
@@ -112,11 +112,11 @@ public class Muyun {
                 .url(cerBaseUrl + "web/rush/shoot")
                 .post(requestBody)
                 .addHeader("Content-type", "application/json;charset=UTF-8")
-                .addHeader("Host", "longtengmuyun.bjyjyc.com")
+                .addHeader("Host", "wx.bjzlke.com")
                 .addHeader("Accept", "application/json, text/plain, */*")
                 .addHeader("Accept-Language", "zh-CN,zh-Hans;q=0.9")
                 .addHeader("Accept-Encoding", "gzip, deflate, br")
-                .addHeader("Origin", "https://longtengmuyun.bjyjyc.com")
+                .addHeader("Origin", "https://wx.bjzlke.com")
                 .addHeader("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.20(0x18001441) NetType/WIFI Language/zh_CN")
                 .addHeader("Connection", "keep-alive")
                 .addHeader("tid", muyun.getToken())
