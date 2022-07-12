@@ -81,8 +81,9 @@ public class DateUtils {
         return null;
     }
 
-    public static Integer getHour(){
+    public static int getHour(){
         String hour = getDate("HH");
-        return Integer.getInteger(hour);
+        int i = Integer.parseInt(hour);
+        return i;
     }
 }
