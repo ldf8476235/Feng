@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+wx:
+  mp:
+    app-id: wx1e9e4a5a170150a8
+    secret: 025337e87b9968f76095db85b8484eb1
+    token: 123456
+    aes-key: 41_CUhuLgJN8Az5OzjS9twAMOn4fwUDZbByjYCxiOkU6BHXCV-zSyPokiqoKicxCJoRmWsNEbiaAC1kgm9w3HSos-VZMd1V5t-8Ew5VX0y3bJ3X6-BAp1_Y3PuCr-fiMyTMoSnsxn9Y7JS64sckKUBdAJANXE

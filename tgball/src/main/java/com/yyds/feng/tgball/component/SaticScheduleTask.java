@@ -13,13 +13,13 @@ import java.io.UnsupportedEncodingException;
 public class SaticScheduleTask {
 //    @Scheduled(cron = "0/5 * * * * ?")
     //或直接指定时间间隔，例如：5秒 5000
-    @Scheduled(fixedRate=10000)
+    @Scheduled(fixedRate=600000)
     private static void configureTasks() {
-//        try {
-//            Test.login();
-//        } catch (UnsupportedEncodingException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            Test.login();
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
         Test.my();
     }
 }

@@ -25,7 +25,7 @@ public class Test {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 //        sendSms();
-        //login();
+        login();
         my();
     }
     public static void sendSms(){
@@ -80,13 +80,13 @@ public class Test {
             if (num == 0) {
                 WxPush.push("TG","交易结束",WxPush.DEFAULT_KEY);
             }
+            log.info("进行中订单:->{}",num);
             System.out.println(DateUtils.getSysTime() + "进行中订单:" + num);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
     public static void login() throws UnsupportedEncodingException {
-        log.info("登录1");
         String url="https://m1.zvip111.co/ac_login.php";
         X509TrustManager manager = SSLSocketClientUtil.getX509TrustManager();
         OkHttpClient okHttpClient = new OkHttpClient
@@ -109,12 +109,11 @@ public class Test {
                 .addHeader("Connection", "keep-alive")
                 .addHeader("Referer", "https://m1.zvip111.co/login.php")
                 .addHeader("deviceInfo", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
-                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya120.245.114.126; PHPSESSID=3bl5e7gj5dga8dlbcs99j5oft6")
+                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya106.3.197.194; PHPSESSID=3bl5e7gj5dga8dlbcs99j5oft6")
                 .post(requestBody)
                 .build();
         Call call = okHttpClient.newCall(request);
         try {
-            log.info("登录2");
             Response response = call.execute();
             String result = response.body().string();//得到数据
             log.info(result);
@@ -132,7 +131,7 @@ public class Test {
                     .validateTLSCertificates(false)
                     .execute();
 //            Document doc = res.parse();
-            System.out.println(res.body());
+//            System.out.println(res.body());
 //            System.out.println(doc);
         } catch (IOException e) {
             throw new RuntimeException(e);
