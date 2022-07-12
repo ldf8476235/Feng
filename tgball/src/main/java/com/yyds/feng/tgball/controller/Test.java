@@ -1,9 +1,6 @@
 package com.yyds.feng.tgball.controller;
 
-import com.yyds.feng.common.util.DateUtils;
-import com.yyds.feng.common.util.RedisUtils;
-import com.yyds.feng.common.util.SSLSocketClientUtil;
-import com.yyds.feng.common.util.WxPush;
+import com.yyds.feng.common.util.*;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.jsoup.Connection;
@@ -29,9 +26,11 @@ public class Test {
     RedisUtils redisUtils;
 
     public static void main(String[] args) throws UnsupportedEncodingException {
+        WxPush.push("TG","交易结束",WxPush.DEFAULT_KEY);
+        BarkPush.push("test","123");
 //        sendSms();
-        login();
-        my();
+//        login();
+//        my();
     }
     public static void sendSms(){
         String url="https://m1.zvip111.co/ac_sms.php";
