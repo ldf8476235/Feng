@@ -1,5 +1,6 @@
 package com.yyds.feng.common.util;
 
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 
 /**
@@ -7,6 +8,7 @@ import okhttp3.*;
  * @Author Lee
  * @Date 2022/5/27 21:57
  */
+@Slf4j
 public class WxPush {
 
     public static String DEFAULT_KEY = "SCT151414TwkgXvmHzzzbVhqfAGymguS4Q";
@@ -31,6 +33,8 @@ public class WxPush {
         try {
             //获取返回值
             Response response = client.newCall(request).execute();
+            log.info("WxPush->{}",response.body().string());
+            response.close();
         } catch (Exception e){
 
         }

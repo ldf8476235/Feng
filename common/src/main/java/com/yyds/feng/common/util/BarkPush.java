@@ -1,7 +1,9 @@
 package com.yyds.feng.common.util;
 
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 
+@Slf4j
 public class BarkPush {
 
     public static String DEFAULT_KEY = "MpaeArEPB9Ev952rkbGRrS";
@@ -28,6 +30,8 @@ public class BarkPush {
         try {
             //获取返回值
             Response response = client.newCall(request).execute();
+            log.info("BarkPush->{}",response.body().string());
+            response.close();
         } catch (Exception e){
 
         }
