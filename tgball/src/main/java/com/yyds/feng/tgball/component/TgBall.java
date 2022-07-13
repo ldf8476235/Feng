@@ -1,9 +1,6 @@
 package com.yyds.feng.tgball.component;
 
-import com.yyds.feng.common.util.DateUtils;
-import com.yyds.feng.common.util.RedisUtils;
-import com.yyds.feng.common.util.SSLSocketClientUtil;
-import com.yyds.feng.common.util.WxPush;
+import com.yyds.feng.common.util.*;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.jsoup.Connection;
@@ -30,7 +27,7 @@ public class TgBall {
             res = Jsoup.connect("https://m1.zvip111.co/my.php")
                     .method(Connection.Method.GET)
                     .timeout(10000)
-                    .header("Cookie","popupshow=saw; say=tg332wyaya103.95.71.132; PHPSESSID=8ib33oh7jjjqalps78lgurkgr2; loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D")
+                    .header("Cookie","popupshow=saw; say=tg332wyaya120.245.138.246; PHPSESSID=8ib33oh7jjjqalps78lgurkgr5; loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D")
                     .header("User-Agent","Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
                     .header("deviceInfo", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
                     .validateTLSCertificates(false)
@@ -46,7 +43,8 @@ public class TgBall {
                 if (now-old > (60 * 90) &&
                         (8 < DateUtils.getHour() && DateUtils.getHour() < 23)) {
                     redisUtils.set("remind", "" + System.currentTimeMillis() / 1000);
-                    WxPush.push("TG", "交易结束", WxPush.DEFAULT_KEY);
+//                    WxPush.push("TG", "交易结束", WxPush.DEFAULT_KEY);
+                    BarkPush.push("TG","交易结束");
                 }
             }
             log.info("当前交易中订单->{}",num);
@@ -78,7 +76,7 @@ public class TgBall {
                 .addHeader("Connection", "keep-alive")
                 .addHeader("Referer", "https://m1.zvip111.co/login.php")
                 .addHeader("deviceInfo", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1")
-                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya103.95.71.132; PHPSESSID=8ib33oh7jjjqalps78lgurkgr2")
+                .addHeader("Cookie", "loginInfo_cookie=eyJhY2NvdW50IjoiQVNXMjA1IiwicHdkIjoiV3NsZGYxMjM0NTYifQ%3D%3D; say=tg332wyaya120.245.138.246; PHPSESSID=8ib33oh7jjjqalps78lgurkgr5")
                 .post(requestBody)
                 .build();
         Call call = okHttpClient.newCall(request);

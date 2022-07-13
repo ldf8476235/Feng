@@ -17,7 +17,7 @@ public class SaticScheduleTask {
     @Autowired
     TgBall tgBall;
 
-    @Scheduled(fixedRate=600000)
+    @Scheduled(fixedRate=600000 * 2)
     private void configureTasks() {
         try {
             tgBall.login();
