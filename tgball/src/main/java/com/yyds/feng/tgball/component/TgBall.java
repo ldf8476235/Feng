@@ -33,19 +33,11 @@ public class TgBall {
                     .validateTLSCertificates(false)
                     .execute();
             Document doc = res.parse();
-//            System.out.println(doc);
             Element element = doc.getElementsByClass("type1 carousel-item").get(1);
             int num = Integer.parseInt(element.child(1).text());
             if (num == 0) {
-                String remind = redisUtils.get("remind");
-                Long old = Long.parseLong(remind);
-                Long now = System.currentTimeMillis()/1000;
-                if (now-old > (60 * 90) &&
-                        (8 < DateUtils.getHour() && DateUtils.getHour() < 23)) {
-                    redisUtils.set("remind", "" + System.currentTimeMillis() / 1000);
-//                    WxPush.push("TG", "交易结束", WxPush.DEFAULT_KEY);
-                    BarkPush.push("TG","交易结束");
-                }
+                redisUtils.set("remind", "end");
+                BarkPush.push("TG","交易结束");
             }
             log.info("当前交易中订单->{}",num);
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 package com.yyds.feng.vx.crotroller;
 
+import com.yyds.feng.common.util.RedisUtils;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutTextMessage;
@@ -15,6 +16,9 @@ public class VxController {
 
     @Autowired
     private WxMpService wxMpService;
+
+    @Autowired
+    RedisUtils redisUtils;
 
     @GetMapping("/vx")
     public String login(String signature, String timestamp, String nonce, String echostr){
@@ -54,15 +58,15 @@ public class VxController {
          * 文本消息
          */
         if(messageType.equals("text")){
-            if (text.equals("上分")) {
+            if (text.equals("1")) {
                 WxMpXmlOutTextMessage texts = WxMpXmlOutTextMessage
                         .TEXT()
                         .toUser(fromUser)
                         .fromUser(touser)
-                        .content("您已成功登记")
+                        .content("开始监控订单")
                         .build();
+                redisUtils.set("remind", "start");
                 String result = texts.toXml();
-                System.out.println("响应给用户的消息：" + result);
                 return result;
             }
         }

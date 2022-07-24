@@ -1,6 +1,7 @@
 package com.yyds.feng.tgball.component;
 
 
+import com.yyds.feng.common.util.RedisUtils;
 import com.yyds.feng.tgball.controller.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,9 @@ public class SaticScheduleTask {
     @Autowired
     TgBall tgBall;
 
+    @Autowired
+    RedisUtils redisUtils;
+
     @Scheduled(fixedRate=600000 * 2)
     private void configureTasks() {
         try {
@@ -23,6 +27,8 @@ public class SaticScheduleTask {
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
-        tgBall.my();
+        if (redisUtils.get("remind").equals("start")) {
+            tgBall.my();
+        }
     }
 }

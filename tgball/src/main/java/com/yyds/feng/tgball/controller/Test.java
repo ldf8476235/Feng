@@ -27,7 +27,7 @@ public class Test {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         WxPush.push("TG","交易结束",WxPush.DEFAULT_KEY);
-        BarkPush.push("test","123");
+                ;
 //        sendSms();
 //        login();
 //        my();
